@@ -7,8 +7,8 @@ class Negociacoes
         this._negociacoes.push(negociacao);
     }
 
-    listNegociacoes(): Negociacao[]
+    listaNegociacoes(): Negociacao[]
     {
-        return this._negociacoes;
+        return [].concat(this._negociacoes);
     }
 }
