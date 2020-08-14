@@ -28,8 +28,7 @@ export class NegociacoesView extends View <Negociacoes>
 
             <tfoot>
             </tfoot>
-        </table>    
-        <script>alert('Não escapou')</script>           
+        </table>        
         `
     }
 }
