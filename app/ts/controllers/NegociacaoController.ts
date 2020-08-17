@@ -21,6 +21,7 @@ export class NegociacaoController
 
     adiciona(event: Event)
     {
+        const t1 = performance.now();
         event.preventDefault();
         const negociacao = new Negociacao(
             new Date (this._inputData.val().replace(/-/g, ',')), 
@@ -30,5 +31,8 @@ export class NegociacaoController
         this._negociacoes.adiciona(negociacao);
         this._negociacoesView.update(this._negociacoes);
         this._mensagemView.update('Dívida adicionada com sucesso!')
+        const t2 = performance.now();
+        console.log(`tempo de ${t2 - t1}ms`);
+        
     }
 }
