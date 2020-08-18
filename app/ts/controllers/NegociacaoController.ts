@@ -18,9 +18,6 @@ export class NegociacaoController
 
     constructor()
     {
-        // this._inputData = $("#data");
-        // this._inputQuantidade = $("#quantidade");
-        // this._inputValor = $("#valor");
         this._negociacoesView.update(this._negociacoes);
     }
 
@@ -39,5 +36,10 @@ export class NegociacaoController
         const t2 = performance.now();
         console.log(`tempo de ${t2 - t1}ms`);
         
+    }
+
+    importarDados()
+    {
+        alert('oi');
     }
 }
