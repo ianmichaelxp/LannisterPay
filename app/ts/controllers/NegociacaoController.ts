@@ -1,7 +1,7 @@
 import { Negociacoes, Negociacao, NegociacaoParcial} from '../models/index';
 import { NegociacoesView, MensagemView } from '../views/index';
 import { domInject } from '../helpers/decorators/domInject';
-import { now } from 'jquery';
+import { throttle } from '../helpers/decorators/index';
 
 
 export class NegociacaoController
@@ -22,10 +22,11 @@ export class NegociacaoController
         this._negociacoesView.update(this._negociacoes);
     }
 
-    adiciona(event: Event)
+
+    @throttle()
+    adiciona()
     {
         const t1 = performance.now();
-        event.preventDefault();
         const negociacao = new Negociacao(
             new Date (this._inputData.val().replace(/-/g, ',')), 
             parseInt(this._inputQuantidade.val()),
@@ -39,6 +40,7 @@ export class NegociacaoController
         
     }
 
+    @throttle()
     importarDados()
     {
         function isOk(res: Response)
