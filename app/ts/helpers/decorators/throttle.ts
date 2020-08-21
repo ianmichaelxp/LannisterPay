@@ -10,7 +10,6 @@ export function throttle(timeout: number = 500)
             if(event) event.preventDefault();
             clearInterval(timer);
             timer = setTimeout(() => metodoOriginal.apply(this, args), timeout); 
-       
         }
 
         return descriptor;

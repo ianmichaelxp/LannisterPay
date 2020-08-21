@@ -17,6 +17,7 @@ export abstract class View <T>
         let template = this.template(model);
         if(this._escapar)
         { 
+            //(procura pela incidência da tag <script> no template e substitui por  '')
             template = template.replace(/<script>[\s\S]*?<\/script>/, '');
         }
         this._elemento.html(template);
