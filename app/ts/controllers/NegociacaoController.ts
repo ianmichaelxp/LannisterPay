@@ -45,6 +45,7 @@ export class NegociacaoController
     @throttle()
     importarDados()
     {
+        //isOk HandlerFunction
         function isOk(res: Response)
         {
             if(res.ok)
