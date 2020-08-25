@@ -44,6 +44,6 @@ testem.log
 /typings
 
 # System Files
-/app/ts.DS_Store
+/app/ts/.DS_Store
 /api/app/.DS_Store
 Thumbs.db

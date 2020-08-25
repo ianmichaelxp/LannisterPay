@@ -3,6 +3,7 @@ import { NegociacoesView, MensagemView } from '../views/index';
 import { domInject } from '../helpers/decorators/domInject';
 import { throttle } from '../helpers/decorators/index';
 import { NegociacaoService } from '../services/index';
+import { imprime } from '../helpers/index'
 
 
 export class NegociacaoController
@@ -34,9 +35,13 @@ export class NegociacaoController
             parseInt(this._inputQuantidade.val()),
             parseFloat(this._inputValor.val())
         );
+
+        
         this._negociacoes.adiciona(negociacao);
+
         this._negociacoesView.update(this._negociacoes);
         this._mensagemView.update('Dívida adicionada com sucesso!')
+        imprime(negociacao, this._negociacoes);
         const t2 = performance.now();
         console.log(`tempo de ${t2 - t1}ms`);
         
